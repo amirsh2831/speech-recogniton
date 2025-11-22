@@ -2,10 +2,8 @@ import wave
 import struct
 import matplotlib.pyplot as plt
 
-# read from wave file ------------------
 wav_file = wave.open('samples/sara.wav', 'rb')
 
-# parameters
 sample_width = wav_file.getsampwidth()
 num_frames = wav_file.getnframes()
 num_channels = wav_file.getnchannels()
@@ -18,7 +16,6 @@ wav_file.close()
 
 if num_channels == 2:
     samples = samples[::2]  
-# ----------------------------------------
 
 hist = [0] * 65536
 

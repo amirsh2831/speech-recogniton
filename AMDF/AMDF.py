@@ -27,8 +27,8 @@ for i in range(num_frames):
 
 plt.figure(figsize=(10, 5))
 plt.imshow(amdf.T, origin='lower', aspect='auto', cmap='viridis')
-plt.colorbar(label='Autocorrelation (biased)')
-plt.xlabel('Frame index')
-plt.ylabel('Lag τ (samples)')
-plt.title('Short-Time Autocorrelation – No Normalization')
+plt.colorbar(label='AMDF')
+plt.xlabel('Frame')
+plt.ylabel('samples')
+plt.title('AMDF')
 plt.show()

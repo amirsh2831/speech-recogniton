@@ -25,8 +25,24 @@ print("max energy)", max(energies))
 
 normalized_energies = energies / max(energies)
 
-w_start = 80 * frame_size //2
-w_end = 185 * frame_size // 2
+w_start = 0
+w_end = 0
+
+for ws in range(num_frames): 
+    if (normalized_energies[ws] > 0.03): 
+        w_start = ws
+        break
+        
+for we in range(num_frames - 1, 0, -1): 
+    if (normalized_energies[we] > 0.03): 
+        w_end = we
+        break
+
+print("w_start:", w_start)
+print("w_end:", w_end)
+
+w_start *=  frame_size // 2
+w_end *=  frame_size // 2
 
 print("w_start:", w_start)
 print("w_end:", w_end)
